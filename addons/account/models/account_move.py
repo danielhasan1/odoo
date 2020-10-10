@@ -2481,7 +2481,7 @@ class AccountMoveLine(models.Model):
         ),
         (
             'check_non_accountable_fields_null',
-             "CHECK(display_type NOT IN ('line_section', 'line_note') OR (amount_currency = 0 AND debit = 0 AND credit = 0 AND account_id IS NULL))",
+             "CHECK(display_type NOT IN ('line_section', 'line_note') AND (amount_currency = 0 AND debit = 0 AND credit = 0 AND account_id IS NULL))",
              "Forbidden unit price, account and quantity on non-accountable invoice line"
         ),
         (
